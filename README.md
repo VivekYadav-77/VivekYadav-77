@@ -1,5 +1,5 @@
 # 💫 About Me:
-<br># 👋 Hi, I’m Vivek  <br><br>💻 Aspiring Full Stack Developer specializing in the MERN stack  <br>⚡ Skilled in JavaScript, React, Node.js, Express, and MongoDB  <br>🛠 Additional experience with Python and C, especially in problem-solving and foundational programming  <br>🌱 Currently deepening knowledge in backend architecture & scalable web applications  <br>🚀 Actively building projects to apply problem-solving and real-world development practices  <br>🔍 Open to internship opportunities in Full Stack Development (target: Nov 2025)  <br>📫 Reach me: shivamyadav9462@gmail.com | https://www.linkedin.com/in/vivekyadav94
+<br># 👋 Hi, I’m Vivek  <br><br>💻 Aspiring Full Stack Developer specializing in the MERN stack  <br>⚡ Skilled in JavaScript, React, Node.js, Express, and MongoDB  <br>🛠 Additional experience with Python and C, especially in problem-solving and foundational programming  <br>🌱 Currently deepening knowledge in backend architecture & scalable web applications  <br>🚀 Actively building projects to apply problem-solving and real-world development practices  <br> <br>📫 Reach me: shivamyadav9462@gmail.com | https://www.linkedin.com/in/vivekyadav94
 
 
 ## 🌐 Socials:
