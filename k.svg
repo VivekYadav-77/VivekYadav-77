@@ -1,0 +1,490 @@
+<svg viewBox="0 0 1400 500" width="1400" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <!-- Fonts -->
+    <style>
+      .font-mono { font-family: 'Share Tech Mono', 'Courier New', monospace; }
+      .font-orb  { font-family: 'Orbitron', 'Courier New', monospace; font-weight: 900; }
+      .font-raj  { font-family: 'Rajdhani', 'Arial', sans-serif; font-weight: 600; }
+    </style>
+
+    <!-- Radial vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+    </radialGradient>
+
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#070b12"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+
+    <!-- Desk gradient -->
+    <linearGradient id="deskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0d1824"/>
+    </linearGradient>
+
+    <!-- Chair gradient -->
+    <linearGradient id="chairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1a2a3a"/>
+      <stop offset="100%" stop-color="#0d1824"/>
+    </linearGradient>
+
+    <!-- Body gradient -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+
+    <!-- Monitor gradient -->
+    <linearGradient id="monGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="rgba(0,200,255,0.05)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+
+    <!-- Terminal gradient -->
+    <linearGradient id="termGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#0d1d30"/>
+      <stop offset="100%" stop-color="#0a1520"/>
+    </linearGradient>
+
+    <!-- Title glow filter -->
+    <filter id="glowBlue" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowGreen" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowLed" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Pulse gradients for data streams -->
+    <linearGradient id="gPulseV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="35%"  stop-color="#00ff88" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00ff88" stop-opacity="1"/>
+      <stop offset="65%"  stop-color="#00ff88" stop-opacity="0"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <linearGradient id="bPulseV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="35%"  stop-color="#00c8ff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00c8ff" stop-opacity="1"/>
+      <stop offset="65%"  stop-color="#00c8ff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <linearGradient id="hPulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="35%"  stop-color="#00c8ff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00c8ff" stop-opacity="0.9"/>
+      <stop offset="65%"  stop-color="#00c8ff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,200,255,0.05)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Clip path for banner boundary -->
+    <clipPath id="bannerClip">
+      <rect width="1400" height="500"/>
+    </clipPath>
+
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="3" fill="transparent"/>
+      <rect y="3" width="1" height="1" fill="rgba(0,0,0,0.1)"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#bannerClip)">
+
+  <!-- ═══════════════════════════════ BACKGROUND ═══════════════════════════════ -->
+  <rect width="1400" height="500" fill="url(#bgGrad)"/>
+  <rect width="1400" height="500" fill="url(#grid)">
+    <animateTransform attributeName="patternTransform" type="translate" values="0,0;40,40" dur="20s" repeatCount="indefinite"/>
+  </rect>
+  <rect width="1400" height="500" fill="url(#scanlines)" opacity="0.6"/>
+  <rect width="1400" height="500" fill="url(#vignette)"/>
+
+  <!-- Decorative bracket watermarks -->
+  <text x="1310" y="130" class="font-orb" font-size="120" fill="#00ff88" opacity="0.04">{}</text>
+  <text x="-10"  y="490" class="font-orb" font-size="120" fill="#00c8ff" opacity="0.04">{}</text>
+
+  <!-- ═══════════════════════════════ DATA STREAM PATHS ════════════════════════ -->
+  <!-- Vertical lines beneath icons -->
+  <line x1="567" y1="154" x2="567" y2="472" stroke="rgba(0,255,136,0.12)" stroke-width="1"/>
+  <line x1="697" y1="134" x2="697" y2="472" stroke="rgba(0,200,255,0.12)" stroke-width="1"/>
+  <line x1="827" y1="159" x2="827" y2="472" stroke="rgba(0,255,136,0.12)" stroke-width="1"/>
+  <line x1="952" y1="144" x2="952" y2="472" stroke="rgba(255,107,53,0.10)" stroke-width="1"/>
+  <line x1="1077" y1="149" x2="1077" y2="472" stroke="rgba(0,229,255,0.12)" stroke-width="1"/>
+  <line x1="1197" y1="164" x2="1197" y2="472" stroke="rgba(0,200,255,0.12)" stroke-width="1"/>
+
+  <!-- Horizontal connector (dashed) -->
+  <line x1="530" y1="250" x2="1240" y2="250" stroke="rgba(0,200,255,0.08)" stroke-width="1" stroke-dasharray="4 8"/>
+
+  <!-- Paths from monitors area to icons (dashed) -->
+  <path d="M 260 72 Q 300 72 370 100 Q 430 130 540 153" stroke="rgba(0,200,255,0.2)" stroke-width="1.5" fill="none" stroke-dasharray="3 5"/>
+  <path d="M 330 72 Q 400 60 560 135" stroke="rgba(0,255,136,0.15)" stroke-width="1" fill="none" stroke-dasharray="3 5"/>
+
+  <!-- ── ANIMATED PULSES (vertical down each line) ── -->
+  <!-- Line 1 green -->
+  <rect x="560" y="0" width="14" height="60" rx="4" fill="url(#gPulseV)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,-60;0,520" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Line 2 blue -->
+  <rect x="690" y="0" width="14" height="60" rx="4" fill="url(#bPulseV)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,-60;0,520" dur="2.5s" begin="-0.8s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Line 3 green -->
+  <rect x="820" y="0" width="14" height="60" rx="4" fill="url(#gPulseV)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,-60;0,520" dur="3.5s" begin="-1.5s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Line 4 blue -->
+  <rect x="945" y="0" width="14" height="60" rx="4" fill="url(#bPulseV)" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,-60;0,520" dur="2.8s" begin="-0.4s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Line 5 blue -->
+  <rect x="1070" y="0" width="14" height="60" rx="4" fill="url(#bPulseV)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,-60;0,520" dur="3.2s" begin="-2s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Line 6 blue -->
+  <rect x="1190" y="0" width="14" height="60" rx="4" fill="url(#bPulseV)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,-60;0,520" dur="2.7s" begin="-1.2s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Horizontal pulse -->
+  <rect x="0" y="243" width="120" height="14" rx="4" fill="url(#hPulse)" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate" values="-120,0;1400,0" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Intersection nodes -->
+  <circle cx="567" cy="250" r="3" fill="#00ff88" opacity="0.6" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="697" cy="250" r="3" fill="#00c8ff" opacity="0.6" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.7s" begin="-0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="827" cy="250" r="3" fill="#00ff88" opacity="0.6" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.2s" begin="-1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="952" cy="250" r="3" fill="#ff6b35" opacity="0.5" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.9s" begin="-0.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1077" cy="250" r="3" fill="#00e5ff" opacity="0.6" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.4s" begin="-1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1197" cy="250" r="3" fill="#00c8ff" opacity="0.6" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.1s" begin="-0.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ═══════════════════════════════ DEVELOPER CHARACTER ══════════════════════ -->
+  <!-- Chair back -->
+  <g transform="translate(0, 120)">
+  <rect x="80" y="160" width="70" height="100" rx="4" fill="url(#chairGrad)" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <!-- Chair seat -->
+  <rect x="65" y="240" width="100" height="20" rx="2" fill="url(#chairGrad)" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <!-- Arm left -->
+  <rect x="72" y="195" width="30" height="50" rx="4" fill="#c8956c" transform="rotate(20,72,195)"/>
+  <!-- Arm right -->
+  <rect x="125" y="195" width="30" height="50" rx="4" fill="#c8956c" transform="rotate(-20,140,195)"/>
+  <!-- Body -->
+  <rect x="85" y="145" width="60" height="80" rx="8" fill="url(#bodyGrad)" stroke="rgba(0,200,255,0.2)" stroke-width="1"/>
+  <!-- Head -->
+  <ellipse cx="115" cy="118" rx="26" ry="26" fill="#c8956c"/>
+  <!-- Hair -->
+  <ellipse cx="115" cy="100" rx="29" ry="14" fill="#1a1a1a"/>
+  <!-- Glasses -->
+  <rect x="100" y="115" width="13" height="9" rx="2" fill="none" stroke="#00c8ff" stroke-width="1.2" opacity="0.8"/>
+  <rect x="117" y="115" width="13" height="9" rx="2" fill="none" stroke="#00c8ff" stroke-width="1.2" opacity="0.8"/>
+  <line x1="113" y1="119" x2="117" y2="119" stroke="#00c8ff" stroke-width="1" opacity="0.7"/>
+  <!-- Headphone band -->
+  <path d="M 88 108 Q 115 88 142 108" fill="none" stroke="#00c8ff" stroke-width="2.5" stroke-linecap="round" filter="url(#glowLed)"/>
+  <!-- Headphone ears -->
+  <rect x="82" y="107" width="12" height="20" rx="5" fill="#0d1520" stroke="#00c8ff" stroke-width="1" filter="url(#glowLed)"/>
+  <rect x="136" y="107" width="12" height="20" rx="5" fill="#0d1520" stroke="#00c8ff" stroke-width="1" filter="url(#glowLed)"/>
+
+  <!-- ═══════════════════════════════ DESK ══════════════════════════════════════ -->
+  <rect x="140" y="262" width="560" height="12" fill="url(#deskGrad)" stroke="#00c8ff" stroke-width="0" stroke-opacity="0"/>
+  <line x1="140" y1="262" x2="700" y2="262" stroke="rgba(0,200,255,0.5)" stroke-width="2" filter="url(#glowLed)"/>
+  <!-- Desk legs -->
+  <rect x="160" y="274" width="8" height="60" fill="#1e3a5f" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <rect x="672" y="274" width="8" height="60" fill="#1e3a5f" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════ MONITORS ══════════════════════════════════ -->
+  <!-- Monitor 1 (larger) -->
+  <rect x="160" y="134" width="200" height="130" rx="4" fill="#050a10" stroke="#00c8ff" stroke-width="1.5" stroke-opacity="0.45" filter="url(#glowLed)"/>
+  <rect x="160" y="134" width="200" height="130" rx="4" fill="url(#monGrad)"/>
+  <!-- Monitor 1 content -->
+  <text x="172" y="157" class="font-mono" font-size="10" fill="#00c8ff">$ node server.js</text>
+  <text x="172" y="173" class="font-mono" font-size="10" fill="#00ff88">▶ Listening on :8080</text>
+  <text x="172" y="189" class="font-mono" font-size="10" fill="#00ff88">✓ DB pool ready</text>
+  <text x="172" y="205" class="font-mono" font-size="10" fill="#00ff88">→ Routes loaded</text>
+  <text x="172" y="221" class="font-mono" font-size="10" fill="#00ff88">✓ Cache connected</text>
+  <!-- Cursor blink -->
+  <rect x="172" y="230" width="6" height="11" fill="#00ff88">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Monitor 1 stand -->
+  <rect x="245" y="264" width="30" height="8" rx="1" fill="#1e3a5f" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <rect x="250" y="258" width="20" height="6" rx="1" fill="#1e3a5f"/>
+
+  <!-- Monitor 2 (smaller) -->
+  <rect x="378" y="152" width="170" height="112" rx="4" fill="#050a10" stroke="#00c8ff" stroke-width="1.5" stroke-opacity="0.45" filter="url(#glowLed)"/>
+  <rect x="378" y="152" width="170" height="112" rx="4" fill="url(#monGrad)"/>
+  <!-- Monitor 2 content -->
+  <text x="388" y="172" class="font-mono" font-size="10" fill="#00c8ff">$ docker ps</text>
+  <text x="388" y="188" class="font-mono" font-size="10" fill="#00ff88">api-svc   ✓ Up</text>
+  <text x="388" y="204" class="font-mono" font-size="10" fill="#00ff88">postgres  ✓ Up</text>
+  <text x="388" y="220" class="font-mono" font-size="10" fill="#a78bfa">redis     ✓ Up</text>
+  <!-- Cursor blink -->
+  <rect x="388" y="230" width="6" height="11" fill="#00c8ff">
+    <animate attributeName="opacity" values="1;0;1" dur="1.2s" begin="-0.3s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Monitor 2 stand -->
+  <rect x="448" y="264" width="30" height="8" rx="1" fill="#1e3a5f" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <rect x="453" y="258" width="20" height="6" rx="1" fill="#1e3a5f"/>
+</g>
+  <!-- ═══════════════════════════════ SERVER RACK ═══════════════════════════════ -->
+<g transform="translate(0, 170)">
+  <!-- Rack frame -->
+  <rect x="570" y="80" width="80" height="140" rx="4" fill="rgba(7,11,18,0.9)" stroke="rgba(0,200,255,0.45)" stroke-width="1.5" filter="url(#glowLed)"/>
+  <!-- Rack units -->
+  <!-- API -->
+  <rect x="576" y="87"  width="68" height="18" rx="2" fill="#0d1d30" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <circle cx="584" cy="96" r="3" fill="#00ff88" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="591" y="100" class="font-mono" font-size="8" fill="rgba(0,200,255,0.7)">API</text>
+  <!-- AUTH -->
+  <rect x="576" y="110" width="68" height="18" rx="2" fill="#0d1d30" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <circle cx="584" cy="119" r="3" fill="#00c8ff" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="3s" begin="-0.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="591" y="123" class="font-mono" font-size="8" fill="rgba(0,200,255,0.7)">AUTH</text>
+  <!-- DB -->
+  <rect x="576" y="133" width="68" height="18" rx="2" fill="#0d1d30" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <circle cx="584" cy="142" r="3" fill="#00ff88" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" begin="-1s" repeatCount="indefinite"/>
+  </circle>
+  <text x="591" y="146" class="font-mono" font-size="8" fill="rgba(0,200,255,0.7)">DB</text>
+  <!-- CACHE -->
+  <rect x="576" y="156" width="68" height="18" rx="2" fill="#0d1d30" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <circle cx="584" cy="165" r="3" fill="#ff6b35" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="-0.8s" repeatCount="indefinite"/>
+  </circle>
+  <text x="591" y="169" class="font-mono" font-size="8" fill="rgba(0,200,255,0.7)">CACHE</text>
+  <!-- MQ -->
+  <rect x="576" y="179" width="68" height="18" rx="2" fill="#0d1d30" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <circle cx="584" cy="188" r="3" fill="#00c8ff" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" begin="-1.2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="591" y="192" class="font-mono" font-size="8" fill="rgba(0,200,255,0.7)">MQ</text>
+  <!-- Rack float animation -->
+  <animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="5s" begin="-2s" repeatCount="indefinite" additive="sum"/>
+</g>
+  <!-- ═══════════════════════════════ FLOATING ICONS ════════════════════════════ -->
+<g transform="translate(0, 20)">
+  <!-- ── NoSQL DB ── -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="4s" repeatCount="indefinite"/>
+    <!-- Box -->
+    <rect x="513" y="90" width="54" height="54" rx="12" fill="rgba(7,11,18,0.9)" stroke="#00ff88" stroke-width="1.5" filter="url(#glowGreen)"/>
+    <!-- DB cylinder icon -->
+    <ellipse cx="540" cy="104" rx="10" ry="4" stroke="#00ff88" stroke-width="1.5" fill="rgba(0,255,136,0.1)"/>
+    <path d="M530 104 v14 c0 2.2 4.5 4 10 4 s10-1.8 10-4 v-14" stroke="#00ff88" stroke-width="1.5" fill="none"/>
+    <path d="M530 111 c0 2.2 4.5 4 10 4 s10-1.8 10-4" stroke="#00ff88" stroke-width="1" fill="none" opacity="0.5"/>
+    <!-- Label -->
+    <text x="540" y="158" class="font-mono" font-size="10" fill="#00ff88" text-anchor="middle" letter-spacing="1">NoSQL</text>
+  </g>
+
+  <!-- ── API Gear ── -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="3.5s" begin="-1s" repeatCount="indefinite"/>
+    <rect x="643" y="74" width="54" height="54" rx="12" fill="rgba(7,11,18,0.9)" stroke="#00c8ff" stroke-width="1.5" filter="url(#glowBlue)"/>
+    <!-- Gear icon -->
+    <circle cx="670" cy="101" r="7" stroke="#00c8ff" stroke-width="1.5" fill="none"/>
+    <circle cx="670" cy="101" r="3" stroke="#00c8ff" stroke-width="1.2" fill="rgba(0,200,255,0.1)"/>
+    <line x1="670" y1="88" x2="670" y2="92" stroke="#00c8ff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="670" y1="110" x2="670" y2="114" stroke="#00c8ff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="657" y1="101" x2="661" y2="101" stroke="#00c8ff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="679" y1="101" x2="683" y2="101" stroke="#00c8ff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="661" y1="91" x2="664" y2="94" stroke="#00c8ff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="676" y1="108" x2="679" y2="111" stroke="#00c8ff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="661" y1="111" x2="664" y2="108" stroke="#00c8ff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="676" y1="94" x2="679" y2="91" stroke="#00c8ff" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="670" y="140" class="font-mono" font-size="10" fill="#00c8ff" text-anchor="middle" letter-spacing="2">API</text>
+  </g>
+
+  <!-- ── Node.js ── -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="4.5s" begin="-2s" repeatCount="indefinite"/>
+    <rect x="773" y="99" width="54" height="54" rx="12" fill="rgba(7,11,18,0.9)" stroke="#00ff88" stroke-width="1.5" filter="url(#glowGreen)"/>
+    <!-- Hexagon for Node -->
+    <polygon points="800,109 811,115.5 811,128.5 800,135 789,128.5 789,115.5" stroke="#00ff88" stroke-width="1.5" fill="rgba(0,255,136,0.07)"/>
+    <text x="800" y="128" class="font-mono" font-size="9" fill="#00ff88" text-anchor="middle" font-weight="bold">JS</text>
+    <text x="800" y="167" class="font-mono" font-size="10" fill="#00ff88" text-anchor="middle" letter-spacing="1">Node.js</text>
+  </g>
+
+  <!-- ── Java ── -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="3.8s" begin="-0.5s" repeatCount="indefinite"/>
+    <rect x="898" y="84" width="54" height="54" rx="12" fill="rgba(7,11,18,0.9)" stroke="#ff6b35" stroke-width="1.5"/>
+    <!-- Coffee cup icon -->
+    <path d="M909 100 h17 l-2.5 18 h-12 z" stroke="#ff6b35" stroke-width="1.5" fill="rgba(255,107,53,0.1)"/>
+    <line x1="907" y1="100" x2="928" y2="100" stroke="#ff6b35" stroke-width="1.5"/>
+    <path d="M926 104 c2 0 3.5 1 3.5 3 s-1.5 3 -3.5 3" stroke="#ff6b35" stroke-width="1.5" fill="none"/>
+    <text x="925" y="152" class="font-mono" font-size="10" fill="#ff6b35" text-anchor="middle" letter-spacing="2">Java</text>
+  </g>
+
+  <!-- ── Curly Braces / Logic ── -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="4.2s" begin="-1.5s" repeatCount="indefinite"/>
+    <rect x="1023" y="89" width="54" height="54" rx="12" fill="rgba(7,11,18,0.9)" stroke="#00e5ff" stroke-width="1.5" filter="url(#glowBlue)"/>
+    <text x="1050" y="125" class="font-mono" font-size="26" fill="#00e5ff" text-anchor="middle" font-weight="bold">{}</text>
+    <text x="1050" y="157" class="font-mono" font-size="10" fill="#00e5ff" text-anchor="middle" letter-spacing="1">Logic</text>
+  </g>
+
+  <!-- ── PGSQL ── -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-10;0,0" dur="3.6s" begin="-3s" repeatCount="indefinite"/>
+    <rect x="1147" y="104" width="54" height="54" rx="12" fill="rgba(7,11,18,0.9)" stroke="#00c8ff" stroke-width="1.5" filter="url(#glowBlue)"/>
+    <!-- Stacked cylinders (SQL) -->
+    <ellipse cx="1174" cy="116" rx="9" ry="3.5" stroke="#00c8ff" stroke-width="1.5" fill="rgba(0,200,255,0.08)"/>
+    <path d="M1165 116 v6 c0 1.9 4 3.5 9 3.5 s9-1.6 9-3.5 v-6" stroke="#00c8ff" stroke-width="1.5" fill="none"/>
+    <path d="M1165 122 v6 c0 1.9 4 3.5 9 3.5 s9-1.6 9-3.5 v-6" stroke="#00c8ff" stroke-width="1.5" fill="none"/>
+    <path d="M1165 119 c0 1.9 4 3.5 9 3.5 s9-1.6 9-3.5" stroke="#00c8ff" stroke-width="1" fill="none" opacity="0.4"/>
+    <text x="1174" y="172" class="font-mono" font-size="10" fill="#00c8ff" text-anchor="middle" letter-spacing="1">PGSQL</text>
+  </g>
+</g>
+  <!-- ═══════════════════════════════ TITLE ═════════════════════════════════════ -->
+  <!-- Glow layer -->
+  <text x="700" y="65" class="font-orb" font-size="40" fill="#00c8ff" opacity="0.3" text-anchor="middle" filter="url(#glowSoft)">BACKEND ARCHITECT</text>
+  <!-- Main title -->
+  <text x="700" y="65" class="font-orb" font-size="40" fill="white" text-anchor="middle" letter-spacing="6" filter="url(#glowBlue)">BACKEND ARCHITECT
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <!-- Subtitle -->
+  <text x="700" y="87" class="font-raj" font-size="14" fill="#00ff88" text-anchor="middle" letter-spacing="9" opacity="0.85">CRAFTING ROBUST INFRASTRUCTURE &amp; API LOGIC</text>
+  <!-- Title underline -->
+  <line x1="460" y1="96" x2="940" y2="96" stroke="url(#hPulse)" stroke-width="1" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- ═══════════════════════════════ TERMINAL WINDOW ══════════════════════════ -->
+  <g transform="translate(120,0)">
+  <rect x="710" y="210" width="330" height="215" rx="6" fill="rgba(5,10,18,0.95)" stroke="rgba(0,200,255,0.5)" stroke-width="1.5" filter="url(#glowLed)"/>
+  <!-- Terminal title bar -->
+  <rect x="710" y="210" width="330" height="26" rx="6" fill="url(#termGrad)"/>
+  <rect x="710" y="226" width="330" height="10" fill="url(#termGrad)"/>
+  <line x1="710" y1="236" x2="1040" y2="236" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+  <!-- Traffic light dots -->
+  <circle cx="724" cy="223" r="5" fill="#ff5f57"/>
+  <circle cx="740" cy="223" r="5" fill="#febc2e"/>
+  <circle cx="756" cy="223" r="5" fill="#28c840"/>
+  <!-- Title text -->
+  <text x="900" y="227" class="font-mono" font-size="11" fill="rgba(0,200,255,0.7)" text-anchor="middle">~/backend_log</text>
+
+  <!-- Terminal lines with staggered fade-in -->
+  <g class="font-mono" font-size="11">
+    <text x="724" y="254" fill="#00c8ff" opacity="0">
+      <tspan fill="#00c8ff">[SYSTEM]</tspan>
+      <tspan fill="#cccccc"> Server init on port 8080...</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.05;0.1;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="724" y="272" fill="#00ff88" opacity="0">
+      <tspan fill="#00ff88">[DB]</tspan>
+      <tspan fill="#cccccc"> Connected to PostgreSQL ✓</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.12;0.17;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="724" y="290" fill="#a78bfa" opacity="0">
+      <tspan fill="#a78bfa">[API]</tspan>
+      <tspan fill="#cccccc"> Routing loaded: /users/</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.19;0.24;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="724" y="308" fill="#ff6b35" opacity="0">
+      <tspan fill="#ff6b35">[AUTH]</tspan>
+      <tspan fill="#cccccc"> JWT Middleware active...</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.26;0.31;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="724" y="326" fill="#00ff88" opacity="0">
+      <tspan fill="#00ff88">[OK]</tspan>
+      <tspan fill="#cccccc"> Worker threads: 4</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.33;0.38;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="724" y="344" fill="#febc2e" opacity="0">
+      <tspan fill="#febc2e">[WARN]</tspan>
+      <tspan fill="#cccccc"> Cache miss rate: 4.2%</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.40;0.45;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="724" y="362" fill="#00ff88" opacity="0">
+      <tspan fill="#00ff88">[DB]</tspan>
+      <tspan fill="#cccccc"> Query avg: 12ms ✓</tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.47;0.52;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <text x="724" y="380" fill="#00c8ff" opacity="0">
+      <tspan fill="#00c8ff">[SYSTEM]</tspan>
+      <tspan fill="#cccccc"> Ready. </tspan>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.54;0.59;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+    <!-- Cursor on last line -->
+    <rect x="822" y="369" width="7" height="12" fill="#00ff88" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0;1;0;1" keyTimes="0;0.59;0.62;0.65;0.68;0.71;1" dur="12s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</g>
+  <!-- ═══════════════════════════════ STATUS BAR ════════════════════════════════ -->
+  <rect x="0" y="472" width="1400" height="28" fill="rgba(0,200,255,0.06)" stroke="none"/>
+  <line x1="0" y1="472" x2="1400" y2="472" stroke="rgba(0,200,255,0.25)" stroke-width="1"/>
+
+  <!-- Status items -->
+  <circle cx="20" cy="486" r="4" fill="#00ff88" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="30" y="490" class="font-mono" font-size="10" fill="rgba(0,200,255,0.65)">API: ONLINE</text>
+
+  <circle cx="130" cy="486" r="4" fill="#00c8ff" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="3s" begin="-0.7s" repeatCount="indefinite"/>
+  </circle>
+  <text x="140" y="490" class="font-mono" font-size="10" fill="rgba(0,200,255,0.65)">DB: CONNECTED</text>
+
+  <circle cx="270" cy="486" r="4" fill="#ff6b35" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" begin="-1.4s" repeatCount="indefinite"/>
+  </circle>
+  <text x="280" y="490" class="font-mono" font-size="10" fill="rgba(0,200,255,0.65)">LATENCY: 11ms</text>
+
+  <circle cx="400" cy="486" r="4" fill="#00ff88" filter="url(#glowLed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" begin="-0.3s" repeatCount="indefinite"/>
+  </circle>
+  <text x="410" y="490" class="font-mono" font-size="10" fill="rgba(0,200,255,0.65)">UPTIME: 99.98%</text>
+
+  <text x="1380" y="490" class="font-mono" font-size="10" fill="rgba(0,255,136,0.5)" text-anchor="end">BACKEND ARCHITECT · v2.0.26</text>
+
+  <!-- ═══════════════════════════════ CORNER DECORATIONS ═══════════════════════ -->
+  <!-- TL -->
+  <line x1="0"    y1="2"   x2="22"  y2="2"   stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+  <line x1="2"    y1="0"   x2="2"     y2="22"  stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+  <!-- TR -->
+  <line x1="1378" y1="2"   x2="1400" y2="2"  stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+  <line x1="1398" y1="0"   x2="1398" y2="22" stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+  <!-- BL -->
+  <line x1="0"    y1="498" x2="22"  y2="498"  stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+  <line x1="2"    y1="478" x2="2"   y2="500"  stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+  <!-- BR -->
+  <line x1="1378" y1="498" x2="1400" y2="498" stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+  <line x1="1398" y1="478" x2="1398" y2="500" stroke="#00c8ff" stroke-width="2" filter="url(#glowLed)"/>
+
+  <!-- Outer border glow -->
+  <rect x="1" y="1" width="1398" height="498" rx="0" fill="none" stroke="rgba(0,200,255,0.18)" stroke-width="1"/>
+
+  </g>
+</svg>
